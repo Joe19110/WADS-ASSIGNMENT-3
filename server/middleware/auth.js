@@ -10,7 +10,7 @@ export const auth = (req, res, next) => {
             if (err) return res.status(403).json({ message: "Token Expired or Invalid Authentication." })
 
             req.user = user
-            // console.log(user)
+            console.log("Decoded user from token:", req.user)
             next()
         })
     } catch (error) {

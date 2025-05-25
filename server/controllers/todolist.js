@@ -3,7 +3,10 @@ import TodolistModel from "../models/todolistModel.js";
 // create to-do
 export const createTodo = async (req, res) => {
     try {
+        console.log("Entering createTodo function");
         const { todo_image, todo_name, todo_desc, todo_status } = req.body
+
+        console.log("User object in createTodo:", req.user);
 
         if (!todo_image || !todo_name || !todo_desc || !todo_status) {
             return res.status(400).json({ message: "Please fill in the required fields." })
