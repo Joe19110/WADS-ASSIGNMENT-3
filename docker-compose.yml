@@ -2,9 +2,9 @@ version: "3.8"
 
 services:
   backend:
-    image: joelliane/todolist-fullstack:latest
+    image: joelliane/todolist-backend:latest
     pull_policy: always
-    container_name: todolist-fullstack
+    container_name: todolist-backend
     restart: always 
     environment:
       PORT: ${PORT}
@@ -20,9 +20,9 @@ services:
       - csbiweb-tunnel
 
   frontend:
-    image: joelliane/todolist-fullstack:latest
+    image: joelliane/todolist-frontend:latest
     pull_policy: always
-    container_name: todolist-fullstack
+    container_name: todolist-frontend
     restart: always
     depends_on:
       - backend
